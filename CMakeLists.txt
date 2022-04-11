@@ -8,7 +8,8 @@ if (NOT MSVC)
 endif()
 
 set(PROGRAMS
-    hello
+        hello
+        cond
     )
 
 find_package(Threads REQUIRED)
