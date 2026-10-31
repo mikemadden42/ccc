@@ -1,20 +1,24 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.16...3.30)
 
 project(ccc CXX)
 
 set(CMAKE_CXX_STANDARD 17)
-if (NOT MSVC)
-    set(CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic")
-endif ()
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+enable_testing()
 
 set(PROGRAMS
         hello
         cond
         )
 
-find_package(Threads REQUIRED)
-
 foreach (program ${PROGRAMS})
     add_executable(${program} ${program}.cc)
-    target_link_libraries(${program} ${CORELIBS} ${CMAKE_THREAD_LIBS_INIT})
+    if (MSVC)
+        target_compile_options(${program} PRIVATE /W4)
+    else ()
+        target_compile_options(${program} PRIVATE -Wall -Wextra -pedantic)
+    endif ()
+    add_test(NAME ${program} COMMAND ${program})
 endforeach (program)
