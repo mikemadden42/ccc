@@ -13,9 +13,9 @@ Findings from a project review (2026-10-31). The project builds cleanly with no 
 ## CI (`.github/workflows/cmake.yml`)
 
 - [x] The Test step does nothing: no tests are registered, so `ctest` finds none. Either drop it, or add `enable_testing()` plus `add_test(NAME ${program} COMMAND ${program})` so CI checks that each example runs and exits with 0.
-- [ ] CI only runs on `ubuntu-latest`, but the README says the examples were tested on macOS, Linux and Windows. Add a matrix of `[ubuntu-latest, macos-latest, windows-latest]` (this also exercises the MSVC branch).
-- [ ] Bump `actions/checkout@v3` (Node 16, retired) to `@v4` or later.
-- [ ] Optional: trim the template comments.
+- [x] CI only runs on `ubuntu-latest`, but the README says the examples were tested on macOS, Linux and Windows. Add a matrix of `[ubuntu-latest, macos-latest, windows-latest]` (this also exercises the MSVC branch).
+- [x] Bump `actions/checkout@v3` (Node 16, retired) to `@v4` or later.
+- [x] Optional: trim the template comments.
 
 ## Source
 
