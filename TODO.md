@@ -19,15 +19,15 @@ Findings from a project review (2026-10-31). The project builds cleanly with no 
 
 ## Source
 
-- [ ] `cond.cc`: `x` is hard-coded to `0`, so only the `zero` branch runs. Unless the book does it this way, read the value or loop over `{-1, 0, 1}` to show all three branches.
-- [ ] `cond.cc`: `negative..` has two dots where the other messages have three.
-- [ ] Pick one style for `return 0;` in `main`: `hello.cc` has it, `cond.cc` doesn't. Leaving it out is legal.
-- [ ] Add a `.clang-format` so future examples stay consistent with the "Reformat code." commit.
+- [x] `cond.cc`: `x` is hard-coded to `0`, so only the `zero` branch runs. Unless the book does it this way, read the value or loop over `{-1, 0, 1}` to show all three branches.
+- [x] `cond.cc`: `negative..` has two dots where the other messages have three.
+- [x] Pick one style for `return 0;` in `main`: `hello.cc` has it, `cond.cc` doesn't. Leaving it out is legal.
+- [x] Add a `.clang-format` so future examples stay consistent with the "Reformat code." commit.
 
 ## Repo hygiene
 
-- [ ] Add a trailing newline to `README.md`.
-- [ ] `.gitignore`: remove the Fortran, `.lai` and similar entries from GitHub's generic template; consider adding `compile_commands.json` and `.vscode/`.
+- [x] Add a trailing newline to `README.md`.
+- [x] `.gitignore`: remove the Fortran, `.lai` and similar entries from GitHub's generic template; consider adding `compile_commands.json` and `.vscode/`.
 
 ## Suggested CMakeLists.txt
 
